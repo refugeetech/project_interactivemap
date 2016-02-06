@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "start-dev": "node server.dev.js",
-    "build": "rm -rf public && mkdir public && cp -r app/images public/ && cp -r app/fonts public/ && webpack --bail",
+    "build": "webpack --bail",
     "postinstall": "npm run build"
   },
   "dependencies": {
