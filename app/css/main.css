@@ -1,0 +1,14 @@
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+html, body {
+  font-size: 100%;
+  overflow: auto;
+  min-height: 100vh;
+}
+
+body {
+  font: 1em/1.5 "Open Sans";
+  color: #333;
+  text-rendering: optimizeLegibility;
+}
