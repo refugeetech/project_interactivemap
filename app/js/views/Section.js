@@ -25,7 +25,10 @@ const Section = ({
       <h2>{section.name}</h2>
 
       {section.categories.map(id =>
-        <Category {...categories[id]} postsById={posts} />
+        <Category
+          key={id}
+          {...categories[id]}
+          postsById={posts} />
       )}
     </div>
 
