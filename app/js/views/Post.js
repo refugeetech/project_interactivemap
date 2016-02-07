@@ -26,17 +26,20 @@ const Post = ({ post }) =>
     </div>
 
     <div style={{textAlign: 'right'}}>
-      <button onClick={() => alert('Just kiddin\'n ;)')} style={{
-        background: '#ababab',
-        borderRadius: '5px',
-        color: '#ffffff',
-        fontSize: '20px',
-        padding: '10px 10px 10px 10px',
-        marginRight: '10px'}}
-      >
-        Next article
-      </button>
+      <NextButton />
     </div>
   </div>
+
+const NextButton = () =>
+  <button onClick={() => alert('Just kiddin\'n ;)')} style={{
+    background: '#ababab',
+    borderRadius: '5px',
+    color: '#ffffff',
+    fontSize: '20px',
+    padding: '10px 10px 10px 10px',
+    marginRight: '10px'}}
+  >
+    Next article
+  </button>
 
 export default enhance(Post)
