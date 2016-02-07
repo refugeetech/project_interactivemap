@@ -24,17 +24,18 @@ const Post = ({ post }) =>
       <h2>{post.title}</h2>
       <div>{post.text}</div>
     </div>
-    <div style={{
-      width: '35%',
-      float: 'right',
-      background: '#ababab',
-      borderRadius: '5px',
-      color: '#ffffff',
-      fontSize: '20px',
-      padding: '10px 10px 10px 10px',
-      marginRight: '10px'}}
-    >
-      kkkik
+
+    <div style={{textAlign: 'right'}}>
+      <button onClick={() => alert('Just kiddin\'n ;)')} style={{
+        background: '#ababab',
+        borderRadius: '5px',
+        color: '#ffffff',
+        fontSize: '20px',
+        padding: '10px 10px 10px 10px',
+        marginRight: '10px'}}
+      >
+        Next article
+      </button>
     </div>
   </div>
 
