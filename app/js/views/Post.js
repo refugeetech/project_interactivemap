@@ -4,12 +4,13 @@ import { Link } from 'react-router'
 import NavBar from './NavBar'
 
 
-const enhance = mapProps(({ posts, ...props }) => ({
+const enhance = mapProps(({ posts, readPosts, ...props }) => ({
   post: posts[props.params.id],
+  isRead: readPosts.includes(props.params.id),
   ...props
 }))
 
-const Post = ({ post, params, onReadPost }) =>
+const Post = ({ post, params, isRead, onReadPost }) =>
   <div className="post" style={{paddingTop: '53px'}}>
     <NavBar title={post.title} />
 
@@ -22,24 +23,26 @@ const Post = ({ post, params, onReadPost }) =>
       <div dangerouslySetInnerHTML={{__html: post.text}} />
     </div>
 
-    <div style={{textAlign: 'center', padding: '0 0 4rem'}}>
-      <button
-        onClick={() => {
-          onReadPost(post.id)
-          window.history.back()
-        }}
-        style={{
-          color: 'white',
-          background: '#00ab6b',
-          borderRadius: '1.4rem',
-          fontFamily: 'Open Sans',
-          fontSize: '0.85rem',
-          lineHeight: '1',
-          padding: '0.7rem 1rem'}}
-      >
-        Mark as read
-      </button>
-    </div>
+    {!isRead &&
+      <div style={{textAlign: 'center', padding: '2rem 0 4rem'}}>
+        <button
+          onClick={() => {
+            onReadPost(post.id)
+            window.history.back()
+          }}
+          style={{
+            color: 'white',
+            background: '#00ab6b',
+            borderRadius: '1.4rem',
+            fontFamily: 'Open Sans',
+            fontSize: '0.9rem',
+            lineHeight: '1',
+            padding: '0.7rem 1.2rem'}}
+        >
+          Mark as read
+        </button>
+      </div>
+    }
 
     {params.n &&
       <div style={{textAlign: 'right'}}>

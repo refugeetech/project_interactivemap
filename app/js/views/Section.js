@@ -22,6 +22,7 @@ const enhance = compose(
       section,
       readCount: readPostsInCategory.length,
       postCount: categoryPosts.length,
+      readPosts,
       ...props
     }
   }),
@@ -32,7 +33,8 @@ const Section = ({
   categories,
   posts,
   readCount,
-  postCount
+  postCount,
+  readPosts
 }) =>
   <div style={{paddingTop: '53px'}}>
     <NavBar title={section.title}>
@@ -68,13 +70,14 @@ const Section = ({
         <Category
           key={id}
           {...categories[id]}
-          postsById={posts} />
+          postsById={posts}
+          readPosts={readPosts} />
       )}
     </div>
 
   </div>
 
-const Category = ({ title, posts, postsById }) =>
+const Category = ({ title, posts, postsById, readPosts }) =>
   <div style={{margin: '0 0 1.4rem'}}>
     <h3 style={{
       fontSize: '0.9rem',
@@ -92,6 +95,7 @@ const Category = ({ title, posts, postsById }) =>
           <PostLink
             id={id}
             nextId={posts[i + 1]}
+            isRead={readPosts.includes(id)}
             {...postsById[id]} />
         </li>
       )}
@@ -105,26 +109,18 @@ const buildUrl = (id, next) =>
     `/posts/${id}?n=${next}` :
     `/posts/${id}`
 
-const PostLink = ({ id, title, text, nextId }) =>
+const PostLink = ({ id, title, text, nextId, isRead }) =>
   <Link
     to={buildUrl(id, nextId)}
     style={{
       display: 'block',
       padding: '0.6rem 1rem',
-      textDecoration: 'none',
-      color: '#333',
+      textDecoration: isRead ? 'line-through' : 'none',
+      color: isRead ? '#999' : '#333',
       background: 'white',
       borderBottom: '1px solid #e5e5e5'}}
   >
     {title}
-    {/*<div
-      dangerouslySetInnerHTML={{__html: text}}
-      style={{
-        color: '#999',
-        fontSize: '0.9rem',
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis'}} />*/}
   </Link>
 
 export default enhance(Section)
