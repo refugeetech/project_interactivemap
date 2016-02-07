@@ -2,6 +2,9 @@ import React from 'react'
 import { mapProps } from 'recompose'
 import { Link } from 'react-router'
 
+let Progress = require('react-progressbar');
+
+
 const enhance = mapProps(({ posts, ...props }) => ({
   post: posts[props.params.id],
   ...props
@@ -38,7 +41,11 @@ const Post = ({ post, params }) =>
         <NextButton postId={n} />
       </div>
     }
+    <div style={{marginBottom: '2rem'}}>
+    <Progress completed={10} />
+    </div>
   </div>
+
 
 const NextButton = ({ postId }) =>
   <Link to={`/posts/${postId}`} style={{
