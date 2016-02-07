@@ -42,7 +42,7 @@ const Section = ({
           fontWeight: '600',
           fontSize: '1.8rem',
           margin: '1rem',
-          color: "#ffffff",
+          color: '#ffffff',
           textShadow: '0px 0px 2px #222'
         }}
         >
