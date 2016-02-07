@@ -31,10 +31,12 @@ const Circle = ({ radius }) =>
     borderRadius: '100%'
   }} />
 
-const SectionLink = ({ id, name }) =>
-  <Link to={String(id)}>
+const SectionLink = ({ id, title }) =>
+  <Link to={String(id)} style={{textDecoration: 'none'}}>
     <Circle radius="7rem" />
-    <div>{name}</div>
+    <div style={{color: '#333', fontSize: '0.9rem'}}>
+      {title}
+    </div>
   </Link>
 
 export default Home

@@ -8,21 +8,29 @@ const enhance = mapProps(({ posts, ...props }) => ({
 }))
 
 const Post = ({ post, params }) =>
-  <div>
+  <div className="post">
     <div style={{
       padding: '1rem',
+      background: 'white',
+      fontFamily: 'Open Sans',
+      fontSize: '0.85rem',
       boxShadow: '0 0.1rem 0.4rem rgba(0,0,0,0.25)'}}
     >
-      <Link to="/">Back</Link>
+      <Link to="/" style={{
+        textDecoration: 'none',
+        color: '#999'}}
+      >
+        &larr; Back
+      </Link>
     </div>
 
     <img
-      src={post.image.image.url}
+      src={post.image.url}
       style={{width: '100%'}} />
 
-    <div style={{padding: '1rem'}}>
-      <h2>{post.title}</h2>
-      <div>{post.text}</div>
+    <div style={{padding: '0 1rem'}}>
+      <h1 style={{marginBottom: '0'}}>{post.title}</h1>
+      <div dangerouslySetInnerHTML={{__html: post.text}} />
     </div>
 
     {params.n &&

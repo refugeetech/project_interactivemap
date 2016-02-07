@@ -12,9 +12,7 @@ class App extends Component {
 
   componentDidMount() {
     request('sections')
-      .then(body => normalize(body, {
-        sections: arrayOf(section)
-      }))
+      .then(body => normalize(body, arrayOf(section)))
       .then(res => this.setState(res.entities))
   }
 
@@ -22,6 +20,7 @@ class App extends Component {
     if (!this.state.sections)
       return <Loader />
 
+    console.log(this.state)
     return cloneElement(this.props.children, this.state)
   }
 }
