@@ -16,7 +16,7 @@ const Section = ({
   categories,
   posts
 }) =>
-  <div>
+  <div style={{paddingTop: '53px'}}> 
     <NavBar title={section.title} />
 
     <div>
