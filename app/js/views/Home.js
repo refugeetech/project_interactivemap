@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 const Home = ({
   sections
 }) =>
-  <div style={{padding: '1rem', textAlign: 'center', background: 'white', minHeight: '100vh'}}>
+  <div style={{padding: '1rem 0 ', textAlign: 'center', background: 'white', minHeight: '100vh'}}>
     <h1 style={{margin: '0 0 1rem'}}>Welcome to Sweden</h1>
 
     <ul style={{
