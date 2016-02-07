@@ -2,12 +2,12 @@ import React from 'react'
 import { mapProps } from 'recompose'
 import { Link } from 'react-router'
 
-const enhance = mapProps(({ posts, params, ...props }) => ({
-  post: posts[params.id],
+const enhance = mapProps(({ posts, ...props }) => ({
+  post: posts[props.params.id],
   ...props
 }))
 
-const Post = ({ post }) =>
+const Post = ({ post, params }) =>
   <div>
     <div style={{
       padding: '1rem',
@@ -25,13 +25,15 @@ const Post = ({ post }) =>
       <div>{post.text}</div>
     </div>
 
-    <div style={{textAlign: 'right'}}>
-      <NextButton />
-    </div>
+    {params.n &&
+      <div style={{textAlign: 'right'}}>
+        <NextButton postId={n} />
+      </div>
+    }
   </div>
 
-const NextButton = () =>
-  <button onClick={() => alert('Just kiddin\'n ;)')} style={{
+const NextButton = ({ postId }) =>
+  <Link to={`/posts/${postId}`} style={{
     background: '#ababab',
     borderRadius: '5px',
     color: '#ffffff',
@@ -40,6 +42,6 @@ const NextButton = () =>
     marginRight: '10px'}}
   >
     Next article
-  </button>
+  </Link>
 
 export default enhance(Post)
