@@ -49,7 +49,7 @@ const NavBar = ({
       </span>
 
       <div style={{ flex: '1', textAlign: 'right' }} >
-        {children || <span>🇸🇪</span>}
+        { children }
       </div>
 
     </div>
