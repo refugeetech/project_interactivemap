@@ -28,7 +28,7 @@ class App extends Component {
 
 const Loader = () =>
   <div style={{
-    padding: '1rem',
+    padding: '2rem 1rem',
     textAlign: 'center'}}
   >
     Loading...
