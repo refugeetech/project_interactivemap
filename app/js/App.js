@@ -1,7 +1,25 @@
 import { normalize, arrayOf } from 'normalizr'
 import React, { cloneElement, Component } from 'react'
+import { compose, mapProps, withState } from 'recompose'
 import request from './utils/request'
 import { section } from './schemas'
+
+const enhance = compose(
+  withState('readPosts', 'setRead', () => JSON.parse(localStorage.getItem('readPosts')) || []),
+  mapProps(({ setRead, ...props }) => ({
+    onReadPost: id => {
+      setRead(ids => {
+        console.log('here', ids, id)
+        if (ids.includes(id)) return ids
+        console.log('heres')
+        const newIds = ids.concat(id)
+        localStorage.setItem('readPosts', JSON.stringify(newIds))
+        return newIds
+      })
+    },
+    ...props
+  }))
+)
 
 class App extends Component {
 
@@ -21,7 +39,7 @@ class App extends Component {
       return <Loader />
 
     console.log(this.state)
-    return cloneElement(this.props.children, this.state)
+    return cloneElement(this.props.children, { ...this.state, ...this.props })
   }
 }
 
@@ -33,4 +51,4 @@ const Loader = () =>
     Loading...
   </div>
 
-export default App
+export default enhance(App)

@@ -2,7 +2,9 @@ import React from 'react'
 import {Link} from 'react-router'
 
 const NavBar = ({
-  title, showBackLink
+  title,
+  showBackLink,
+  children
 }) =>
   <div style={{
     position: 'fixed',
@@ -17,7 +19,8 @@ const NavBar = ({
   >
     <div style={{
       display: 'flex',
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      alignItems: 'center'
     }}>
     <Link to="/" style={{
       textDecoration: 'none',
@@ -34,7 +37,9 @@ const NavBar = ({
     }}>
       { title }
     </span>
-    <div style={{ flex: '1' }} />
+    <div style={{ flex: '1' }}>
+      {children}
+    </div>
 </div>
   </div>
 

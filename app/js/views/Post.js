@@ -9,7 +9,7 @@ const enhance = mapProps(({ posts, ...props }) => ({
   ...props
 }))
 
-const Post = ({ post, params }) =>
+const Post = ({ post, params, onReadPost }) =>
   <div className="post">
     <NavBar title={post.title} />
 
@@ -20,6 +20,25 @@ const Post = ({ post, params }) =>
     <div style={{padding: '0 1rem'}}>
       <h1 style={{marginBottom: '0'}}>{post.title}</h1>
       <div dangerouslySetInnerHTML={{__html: post.text}} />
+    </div>
+
+    <div style={{textAlign: 'center', padding: '0 0 4rem'}}>
+      <button
+        onClick={() => {
+          onReadPost(post.id)
+          window.history.back()
+        }}
+        style={{
+          color: 'white',
+          background: '#00ab6b',
+          borderRadius: '1.4rem',
+          fontFamily: 'Open Sans',
+          fontSize: '0.85rem',
+          lineHeight: '1',
+          padding: '0.7rem 1rem'}}
+      >
+        Mark as read
+      </button>
     </div>
 
     {params.n &&

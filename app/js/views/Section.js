@@ -1,23 +1,45 @@
 import React from 'react'
-import { mapProps } from 'recompose'
+import { compose, mapProps } from 'recompose'
 import { Link } from 'react-router'
 import NavBar from './NavBar'
 
-let Progress = require('react-progressbar');
+const enhance = compose(
+  mapProps(({ sections, params, ...props }) => ({
+    section: sections[params.sectionId],
+    ...props
+  })),
+  mapProps(({ section, readPosts, ...props }) => {
+    const readPostsInCategory = section.categories
+      .map(id => props.categories[id])
+      .reduce((acc, c) => acc.concat(c.posts), [])
+      .filter(id => readPosts.includes(id))
 
-const enhance = mapProps(({ sections, params, ...props }) => ({
-  section: sections[params.sectionId],
-  ...props
-}))
+    const categoryPosts = section.categories
+      .map(id => props.categories[id])
+      .reduce((acc, c) => acc.concat(c.posts), [])
 
+    return {
+      section,
+      readCount: readPostsInCategory.length,
+      postCount: categoryPosts.length,
+      ...props
+    }
+  }),
+)
 
 const Section = ({
   section,
   categories,
-  posts
+  posts,
+  readCount,
+  postCount
 }) =>
   <div>
-    <NavBar title={section.title} />
+    <NavBar title={section.title}>
+      <div style={{fontSize: '0.8rem', textAlign: 'right', color: '#999'}}>
+        {readCount} of {postCount} done
+      </div>
+    </NavBar>
 
     <div>
       <div style={{
@@ -71,9 +93,6 @@ const Category = ({ title, posts, postsById }) =>
             id={id}
             nextId={posts[i + 1]}
             {...postsById[id]} />
-                <div style={{marginBottom: '2rem', padding: '0 1rem'}}>
-                <Progress completed={10} />
-                </div>
         </li>
       )}
     </ul>
@@ -107,7 +126,5 @@ const PostLink = ({ id, title, text, nextId }) =>
         overflow: 'hidden',
         textOverflow: 'ellipsis'}} />*/}
   </Link>
-
-
 
 export default enhance(Section)
