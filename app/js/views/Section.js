@@ -49,14 +49,14 @@ const Section = ({
         <div
         style={{
           padding: '6rem 0 .05rem 0',
-          background: 'linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.35))'
+          background: 'linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.3))'
         }}>
         <h2 style={{
           fontWeight: '600',
           fontSize: '1.8rem',
           margin: '1rem',
           color: '#ffffff',
-          textShadow: '0px 0px 2px #222'
+          textShadow: '1px 1px 2px #444'
         }}
         >
           {section.title}
