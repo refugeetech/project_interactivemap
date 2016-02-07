@@ -6,7 +6,7 @@ const Home = ({
   sections
 }) =>
   <div style={{padding: '1rem 0', paddingTop: '53px', textAlign: 'center', background: 'white', minHeight: '100vh'}}>
-    <NavBar showBackLink="none" title="Welcome To Sweden" />
+    <NavBar showBackLink={false} title="Welcome To Sweden" />
 
     <ul style={{
       display: 'flex',

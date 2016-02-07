@@ -3,7 +3,7 @@ import {Link} from 'react-router'
 
 const NavBar = ({
   title,
-  showBackLink,
+  showBackLink = true,
   children
 }) =>
   <div style={{
@@ -23,18 +23,17 @@ const NavBar = ({
       justifyContent: 'space-between',
       alignItems: 'center'
     }}>
-      <Link to="/" style={{
-        textDecoration: 'none',
-        color: '#fff',
-        flex: '1',
-        display: showBackLink
-      }}
-        onClick={() => {
-            window.history.back()
-        }}
-      >
-        &larr; Back
-      </Link>
+      <div style={{flex: '1'}}>
+        {showBackLink &&
+          <Link
+            to="/"
+            style={{ textDecoration: 'none', color: '#fff'}}
+            onClick={() => window.history.back()}
+          >
+            &larr; Back
+          </Link>
+        }
+      </div>
 
       <span style={{
         textAlign: 'center',
