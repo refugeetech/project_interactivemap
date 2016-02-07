@@ -2,9 +2,6 @@ import React from 'react'
 import { mapProps } from 'recompose'
 import { Link } from 'react-router'
 
-let Progress = require('react-progressbar');
-
-
 const enhance = mapProps(({ posts, ...props }) => ({
   post: posts[props.params.id],
   ...props
@@ -30,10 +27,6 @@ const Post = ({ post, params }) =>
     <img
       src={post.image.url}
       style={{width: '100%'}} />
-
-    <div style={{marginBottom: '2rem', padding: '0 1rem'}}>
-      <Progress completed={10} />
-    </div>
 
     <div style={{padding: '0 1rem'}}>
       <h1 style={{marginBottom: '0'}}>{post.title}</h1>

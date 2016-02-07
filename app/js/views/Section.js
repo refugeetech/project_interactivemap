@@ -2,6 +2,8 @@ import React from 'react'
 import { mapProps } from 'recompose'
 import { Link } from 'react-router'
 
+  let Progress = require('react-progressbar');
+
 const enhance = mapProps(({ sections, params, ...props }) => ({
   section: sections[params.sectionId],
   ...props
@@ -80,9 +82,14 @@ const Category = ({ title, posts, postsById }) =>
             id={id}
             nextId={posts[i + 1]}
             {...postsById[id]} />
+                <div style={{marginBottom: '2rem', padding: '0 1rem'}}>
+                <Progress completed={10} />
+                </div>
         </li>
       )}
     </ul>
+
+
   </div>
 
 const buildUrl = (id, next) =>
@@ -112,4 +119,6 @@ const PostLink = ({ id, title, text, nextId }) =>
         textOverflow: 'ellipsis'}} />*/}
   </Link>
 
+
+  
 export default enhance(Section)
