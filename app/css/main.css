@@ -25,3 +25,9 @@ ul {
 li {
   list-style: none;
 }
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}

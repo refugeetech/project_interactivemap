@@ -24,23 +24,23 @@ const Post = ({ post }) =>
       <h2>{post.title}</h2>
       <div>{post.text}</div>
     </div>
-    <div style={{
-      width: '35%',
-      float: 'right',
-      background: '#00D165',
-      borderRadius: '5px',
-      fontSize: '16px',
-      padding: '6px 10px 6px 10px',
-      marginRight: '10px',
-      textAlign: 'center'}}
-    >
-      <Link to ="/" style={{
-        textDecoration: 'none', 
-        color: '#fff'}}
-      >
-        Next Article
-      </Link>
+
+    <div style={{textAlign: 'right'}}>
+      <NextButton />
     </div>
   </div>
+
+const NextButton = () =>
+  <Link to="/" style={{
+    background: '#ababab',
+    borderRadius: '5px',
+    color: '#ffffff',
+    fontSize: '20px',
+    padding: '10px 10px 10px 10px',
+    marginRight: '10px',
+    textDecoration: 'none'}}
+  >
+    Next article
+  </Link>
 
 export default enhance(Post)
