@@ -29,6 +29,9 @@ const NavBar = ({
         flex: '1',
         display: showBackLink
       }}
+        onClick={() => {
+            window.history.back()
+        }}
       >
         &larr; Back
       </Link>
