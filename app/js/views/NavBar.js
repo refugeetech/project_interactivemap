@@ -30,7 +30,11 @@ const NavBar = ({
     </Link>
 
     <span style={{
-      textAlign: 'center'
+      textAlign: 'center',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      maxWidth: '50vw'
     }}>
       { title }
     </span>
