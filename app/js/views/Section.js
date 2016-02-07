@@ -2,6 +2,7 @@ import React from 'react'
 import { mapProps } from 'recompose'
 import { Link } from 'react-router'
 
+
 const enhance = mapProps(({ sections, params, ...props }) => ({
   section: sections[params.sectionId],
   ...props
