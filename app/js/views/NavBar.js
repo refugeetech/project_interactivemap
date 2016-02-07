@@ -12,8 +12,9 @@ const NavBar = ({
     left: '0',
     width: '100%',
     padding: '1rem',
-    background: 'white',
+    background: '#0e6ca5',
     fontFamily: 'Open Sans',
+    fontWeight: '500',
     fontSize: '0.85rem',
     boxShadow: '0 0.1rem 0.4rem rgba(0,0,0,0.25)'}}
   >
@@ -22,25 +23,32 @@ const NavBar = ({
       justifyContent: 'space-between',
       alignItems: 'center'
     }}>
-    <Link to="/" style={{
-      textDecoration: 'none',
-      color: '#999',
-      flex: '1',
-      display: showBackLink
-    }}
-    >
-      &larr; Back
-    </Link>
+      <Link to="/" style={{
+        textDecoration: 'none',
+        color: '#fff',
+        flex: '1',
+        display: showBackLink
+      }}
+      >
+        &larr; Back
+      </Link>
 
-    <span style={{
-      textAlign: 'center'
-    }}>
-      { title }
-    </span>
-    <div style={{ flex: '1' }}>
-      {children}
+      <span style={{
+        textAlign: 'center',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        maxWidth: '60vw',
+        fontWeight: '600',
+        color: '#fff'
+      }}>
+        { title }
+      </span>
+
+      <div style={{ flex: '1', textAlign: 'right' }} >
+        {children || <span>🇸🇪</span>}
+      </div>
     </div>
-</div>
   </div>
 
 export default NavBar

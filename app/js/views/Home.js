@@ -5,14 +5,15 @@ import NavBar from './NavBar'
 const Home = ({
   sections
 }) =>
-  <div style={{padding: '1rem 0', paddingTop: '5rem', textAlign: 'center', background: 'white', minHeight: '100vh'}}>
+  <div style={{padding: '1rem 0', paddingTop: '53px', textAlign: 'center', background: 'white', minHeight: '100vh'}}>
     <NavBar showBackLink="none" title="Welcome To Sweden" />
 
     <ul style={{
       display: 'flex',
       flexWrap: 'wrap',
       textAlign: 'center',
-      justifyContent: 'center'}}
+      justifyContent: 'center',
+      paddingTop: '2rem'}}
     >
       {Object.values(sections).map((section, i) =>
         <li key={i} style={{margin: '0 1rem 2rem'}}>

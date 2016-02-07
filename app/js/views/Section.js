@@ -34,9 +34,9 @@ const Section = ({
   readCount,
   postCount
 }) =>
-  <div>
+  <div style={{paddingTop: '53px'}}>
     <NavBar title={section.title}>
-      <div style={{fontSize: '0.8rem', textAlign: 'right', color: '#999'}}>
+      <div style={{fontSize: '0.8rem', color: 'white'}}>
         {readCount} of {postCount} done
       </div>
     </NavBar>

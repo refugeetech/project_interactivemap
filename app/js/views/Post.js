@@ -10,7 +10,7 @@ const enhance = mapProps(({ posts, ...props }) => ({
 }))
 
 const Post = ({ post, params, onReadPost }) =>
-  <div className="post">
+  <div className="post" style={{paddingTop: '53px'}}>
     <NavBar title={post.title} />
 
     <img
