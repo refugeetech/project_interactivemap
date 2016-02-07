@@ -27,14 +27,15 @@ const Post = ({ post }) =>
     <div style={{
       width: '35%',
       float: 'right',
-      background: '#ababab',
+      background: '#00D165',
       borderRadius: '5px',
       color: '#ffffff',
-      fontSize: '20px',
-      padding: '10px 10px 10px 10px',
-      marginRight: '10px'}}
+      fontSize: '16px',
+      padding: '6px 10px 6px 10px',
+      marginRight: '10px',
+      textAlign: 'center'}}
     >
-      kkkik
+      Next article
     </div>
   </div>
 
