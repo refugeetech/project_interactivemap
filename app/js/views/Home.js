@@ -21,19 +21,22 @@ const menuItems = [{
   label: 'Stuff'
 }]
 
-const Home = ({ children }) =>
+const Home = ({
+  sections
+}) =>
   <div style={{padding: '0 1rem'}}>
     <h1>Welcome to Sweden</h1>
 
     <ul>
-      {menuItems.map((item, i) =>
+      {Object.values(sections).map((section, i) =>
         <li key={i}>
-          <Link to={item.path}>{item.label}</Link>
+          <Link to={String(section.id)}>
+            {section.name}
+          </Link>
         </li>
       )}
     </ul>
 
-    {children}
   </div>
 
 export default Home
