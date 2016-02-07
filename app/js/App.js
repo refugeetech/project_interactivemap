@@ -44,7 +44,7 @@ class App extends Component {
         {cloneElement(this.props.children, { ...this.state, ...this.props })}
       <footer style={{ textAlign: 'center', padding: '1rem 0', fontSize: '0.85rem', color: '#999' }}>
         Made with love in
-        <span style={{fontSize: '1.2rem', position: 'relative', left: '5px', top: '3px'}}>🇸🇪</span>
+        <span style={{fontSize: '1.2rem', position: 'relative', left: '5px', top: '1px'}}>🇸🇪</span>
       </footer>
       </div>
     )}
