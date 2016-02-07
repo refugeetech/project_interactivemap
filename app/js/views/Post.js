@@ -19,7 +19,7 @@ const Post = ({ post, params, isRead, onReadPost }) =>
       style={{width: '100%'}} />
 
     <div style={{padding: '0 1rem'}}>
-      <h1 style={{marginBottom: '0'}}>{post.title}</h1>
+      <h1>{post.title}</h1>
       <div dangerouslySetInnerHTML={{__html: post.text}} />
     </div>
 
