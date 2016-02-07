@@ -10,8 +10,9 @@ const NavBar = ({
     left: '0',
     width: '100%',
     padding: '1rem',
-    background: 'white',
+    background: '#0e6ca5',
     fontFamily: 'Open Sans',
+    fontWeight: '500',
     fontSize: '0.85rem',
     boxShadow: '0 0.1rem 0.4rem rgba(0,0,0,0.25)'}}
   >
@@ -21,7 +22,7 @@ const NavBar = ({
     }}>
     <Link to="/" style={{
       textDecoration: 'none',
-      color: '#999',
+      color: '#fff',
       flex: '1',
       display: showBackLink
     }}
@@ -34,11 +35,15 @@ const NavBar = ({
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
       overflow: 'hidden',
-      maxWidth: '50vw'
+      maxWidth: '60vw',
+      fontWeight: '600',
+      color: '#fff'
     }}>
       { title }
     </span>
-    <div style={{ flex: '1' }} />
+    <div style={{ flex: '1', textAlign: 'right' }} >
+      🇸🇪
+    </div>
 </div>
   </div>
 
