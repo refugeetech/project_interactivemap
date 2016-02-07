@@ -32,11 +32,11 @@ const Post = ({ post }) =>
 
 const NextButton = () =>
   <Link to="/" style={{
-    background: '#ababab',
+    background: '#51DB71',
     borderRadius: '5px',
     color: '#ffffff',
-    fontSize: '20px',
-    padding: '10px 10px 10px 10px',
+    fontSize: '16px',
+    padding: '8px 14px 8px 14px',
     marginRight: '10px',
     textDecoration: 'none'}}
   >
