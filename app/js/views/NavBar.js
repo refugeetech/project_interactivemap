@@ -38,7 +38,7 @@ const NavBar = ({
         textOverflow: 'ellipsis',
         whiteSpace: 'nowrap',
         overflow: 'hidden',
-        maxWidth: '60vw',
+        maxWidth: '50vw',
         fontWeight: '600',
         color: '#fff'
       }}>
@@ -48,6 +48,7 @@ const NavBar = ({
       <div style={{ flex: '1', textAlign: 'right' }} >
         {children || <span>🇸🇪</span>}
       </div>
+
     </div>
   </div>
 
