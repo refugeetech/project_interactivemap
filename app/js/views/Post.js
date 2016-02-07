@@ -39,7 +39,8 @@ const NextButton = ({ postId }) =>
     color: '#ffffff',
     fontSize: '20px',
     padding: '10px 10px 10px 10px',
-    marginRight: '10px'}}
+    marginRight: '10px',
+    textDecoration: 'none'}}
   >
     Next article
   </Link>
