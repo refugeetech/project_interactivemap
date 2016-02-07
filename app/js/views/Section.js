@@ -1,6 +1,7 @@
 import React from 'react'
 import { mapProps } from 'recompose'
 import { Link } from 'react-router'
+import NavBar from './NavBar'
 
   let Progress = require('react-progressbar');
 
@@ -9,26 +10,14 @@ const enhance = mapProps(({ sections, params, ...props }) => ({
   ...props
 }))
 
+
 const Section = ({
   section,
   categories,
   posts
 }) =>
   <div>
-    <div style={{
-      padding: '1rem',
-      background: 'white',
-      fontFamily: 'Open Sans',
-      fontSize: '0.85rem',
-      boxShadow: '0 0.1rem 0.4rem rgba(0,0,0,0.25)'}}
-    >
-      <Link to="/" style={{
-        textDecoration: 'none',
-        color: '#999'}}
-      >
-        &larr; Back
-      </Link>
-    </div>
+    <NavBar title={section.title} />
 
     <div>
       <div style={{
@@ -120,5 +109,5 @@ const PostLink = ({ id, title, text, nextId }) =>
   </Link>
 
 
-  
+
 export default enhance(Section)
