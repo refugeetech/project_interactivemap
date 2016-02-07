@@ -31,6 +31,10 @@ const Post = ({ post, params }) =>
       src={post.image.url}
       style={{width: '100%'}} />
 
+    <div style={{marginBottom: '2rem', padding: '0 1rem'}}>
+      <Progress completed={10} />
+    </div>
+
     <div style={{padding: '0 1rem'}}>
       <h1 style={{marginBottom: '0'}}>{post.title}</h1>
       <div dangerouslySetInnerHTML={{__html: post.text}} />
@@ -41,9 +45,6 @@ const Post = ({ post, params }) =>
         <NextButton postId={n} />
       </div>
     }
-    <div style={{marginBottom: '2rem'}}>
-    <Progress completed={10} />
-    </div>
   </div>
 
 
