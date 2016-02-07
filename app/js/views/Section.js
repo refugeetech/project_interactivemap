@@ -38,17 +38,25 @@ const Category = ({ name, posts, postsById }) =>
     </h3>
 
     <ul>
-      {posts.map(id =>
+      {posts.map((id, i) =>
         <li key={id}>
-          <PostLink id={id} {...postsById[id]} />
+          <PostLink
+            id={id}
+            nextId={posts[i + 1]}
+            {...postsById[id]} />
         </li>
       )}
     </ul>
   </div>
 
-const PostLink = ({ id, title }) =>
+const buildUrl = (id, next) =>
+  next ?
+    `/posts/${id}?n=${next}` :
+    `/posts/${id}`
+
+const PostLink = ({ id, title, nextId }) =>
   <Link
-    to={`/posts/${id}`}
+    to={buildUrl(id, nextId)}
     style={{
       display: 'block',
       padding: '0.4rem 0'
