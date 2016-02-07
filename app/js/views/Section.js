@@ -29,13 +29,27 @@ const Section = ({
     </div>
 
     <div>
-      <h2 style={{
-        fontWeight: '600',
-        fontSize: '1.8rem',
-        margin: '1rem'}}
-      >
-        {section.title}
-      </h2>
+      <div style={{
+        backgroundImage: 'url('+section.image.url+')',
+        backgroundSize: 'cover'
+      }}>
+        <div
+        style={{
+          padding: '4rem 0 .05rem 0',
+          background: 'linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.35))'
+        }}>
+        <h2 style={{
+          fontWeight: '600',
+          fontSize: '1.8rem',
+          margin: '1rem',
+          color: "#ffffff",
+          textShadow: '0px 0px 2px #222'
+        }}
+        >
+          {section.title}
+        </h2>
+        </div>
+      </div>
 
       {section.categories.map(id =>
         <Category
