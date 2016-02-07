@@ -29,13 +29,17 @@ const Post = ({ post }) =>
       float: 'right',
       background: '#00D165',
       borderRadius: '5px',
-      color: '#ffffff',
       fontSize: '16px',
       padding: '6px 10px 6px 10px',
       marginRight: '10px',
       textAlign: 'center'}}
     >
-      Next article
+      <Link to ="/" style={{
+        textDecoration: 'none', 
+        color: '#fff'}}
+      >
+        Next Article
+      </Link>
     </div>
   </div>
 
