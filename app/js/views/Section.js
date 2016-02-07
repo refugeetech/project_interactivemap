@@ -3,7 +3,7 @@ import { mapProps } from 'recompose'
 import { Link } from 'react-router'
 import NavBar from './NavBar'
 
-  let Progress = require('react-progressbar');
+let Progress = require('react-progressbar');
 
 const enhance = mapProps(({ sections, params, ...props }) => ({
   section: sections[params.sectionId],

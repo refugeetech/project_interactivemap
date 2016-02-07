@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router'
+import NavBar from './NavBar'
 
 const Home = ({
   sections
 }) =>
-  <div style={{padding: '1rem 0 ', textAlign: 'center', background: 'white', minHeight: '100vh'}}>
-    <h1 style={{margin: '0 0 1rem'}}>Welcome to Sweden</h1>
+  <div style={{padding: '1rem 0', paddingTop: '5rem', textAlign: 'center', background: 'white', minHeight: '100vh'}}>
+    <NavBar showBackLink="none" title="Welcome To Sweden" />
 
     <ul style={{
       display: 'flex',
